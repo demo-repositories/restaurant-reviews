@@ -14,21 +14,12 @@ export async function loadRestaurants(): Promise<Restaurant[]> {
 
 /**
  * Search restaurants via Sanity using the GROQ `@ match` operator.
- *
- * Each whitespace-separated word in the user's query is given a `*` suffix so
- * that partial words match as prefixes (e.g. "piz" -> "piz*" matches "pizza").
- * Words are passed as an array, which GROQ treats as an implicit AND.
  */
 export async function searchRestaurants(query: string): Promise<Restaurant[]> {
   const trimmed = query.trim()
-  if (!trimmed) return []
+  
 
-  const tokens = trimmed
-    .split(/\s+/)
-    .filter(Boolean)
-    .map((token) => `${token}*`)
-
-  return sanityClient.fetch<Restaurant[]>(SEARCH_QUERY, {q: tokens}, {method: 'POST'})
+  return sanityClient.fetch<Restaurant[]>(SEARCH_QUERY, {q: trimmed}, {method: 'POST'})
 }
 
 export async function loadAppData(): Promise<{
