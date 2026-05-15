@@ -54,7 +54,7 @@ export const FEATURES_QUERY = defineQuery(`*[
 
 export const SEARCH_QUERY = defineQuery(`
 *[_type == "restaurant"] | score(
-    [restaurant_name] match $q
+    restaurant_name match $q
 ) [0...100] {
   _id,
   restaurant_name,
