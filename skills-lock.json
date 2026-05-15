@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "create-agent-with-sanity-context": {
+      "source": "/Users/jonathan.burbridge/Downloads/agent-context-dist/create-agent-with-sanity-context",
+      "sourceType": "local",
+      "computedHash": "b72a64f86cafad0508bb0da00a88e5385fcaf6efafecf1ce4d1fe42a1fdf3a63"
+    }
+  }
+}

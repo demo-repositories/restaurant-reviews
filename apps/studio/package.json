@@ -1,0 +1,42 @@
+{
+  "name": "studio",
+  "private": true,
+  "version": "1.0.0",
+  "main": "package.json",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy",
+    "blueprints:deploy": "sanity blueprints deploy --fn-installer yarn",
+    "blueprints:logs": "sanity functions logs classify-conversations",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.77",
+    "@sanity/agent-context": "0.6.0",
+    "@sanity/client": "^7",
+    "@sanity/functions": "^1",
+    "@sanity/icons": "^3.7.4",
+    "@sanity/vision": "5.25.1",
+    "ai": "^6.0.182",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "sanity": "5.25.1",
+    "styled-components": "^6.4.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@sanity/blueprints": "^0.18.0",
+    "@sanity/eslint-config-studio": "^6.0.0",
+    "@types/react": "^19.2.14",
+    "dotenv": "^17",
+    "eslint": "^10.3.0",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,20 @@
+*[_type == 'restaurant'] {
+   _id,
+  _type,
+  restaurant_name,
+  avg_rating,
+  default_language,
+  gluten_free,
+  'cuisines': coalesce(string::split(cuisines, ","), []),
+  'top_tags': coalesce(string::split(top_tags, ","), []),   
+  'features': coalesce(string::split(features, ","), []),
+  'location': location-> {                       
+      _id,                                           
+      'city': coalesce(city, 'unknown'),       
+      'country': coalesce(country, 'unknown'),
+      'region': coalesce(region, 'unknown'),
+      'latitude': ^.latitude,                      
+      'longitude': ^.longitude,
+      'address': ^.address
+  }                                              
+}
